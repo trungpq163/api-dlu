@@ -1,30 +1,34 @@
 const fetch = require("node-fetch");
 const { Headers } = require("node-fetch");
 const tabletojson = require("tabletojson").Tabletojson;
+require("dotenv").config();
 
 const fs = require("fs");
 const path = require("path");
-
-require("dotenv").config();
-
-const myHeaders = new Headers();
 
 const date = new Date();
 const year = date.getFullYear();
 const month = date.getMonth();
 
+var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
-myHeaders.append("Cookie", "ASP.NET_SessionId=wsc5km3qwjhhfh4rkey2hxac");
+myHeaders.append("Cookie", "ASP.NET_SessionId=x4xip2xdezqlj5t2ujdmtqix");
 
-const urlencoded = new URLSearchParams();
+var urlencoded = new URLSearchParams();
 urlencoded.append("txtTaiKhoan", process.env.ID);
 urlencoded.append("txtMatKhau", process.env.PassWord);
 
-const requestOptions = {
-  method: "POST",
+var requestOptions = {
+  method: 'POST',
   headers: myHeaders,
   body: urlencoded,
-  redirect: "follow"
+  redirect: 'follow'
+};
+
+var requestOptionsGet = {
+  method: 'GET',
+  headers: myHeaders,
+  redirect: 'follow'
 };
 
 let yearStudy = "";
@@ -129,7 +133,7 @@ async function performSyncScheduleFunctions(idImport, yearImport, termImport, we
       }&TermID=${termImportRegex.test(termImport) ? termImport : termID
       }&Week=${(typeof (Number(weekImport)) === 'number' && Number(weekImport) >= 0) ? weekImport : week
       }&ProfessorID=${idImport}`;
-    await getScheduleFromURLAndWriteFile(url, requestOptions);
+    await getScheduleFromURLAndWriteFile(url, requestOptionsGet);
 
   } else if (typeof (Number(idImport)) === 'number' & Number(idImport) > 0) {
     let url = await `http://online.dlu.edu.vn/Home/DrawingStudentSchedule?StudentId=${Number(
@@ -138,14 +142,14 @@ async function performSyncScheduleFunctions(idImport, yearImport, termImport, we
       }&TermId=${termImportRegex.test(termImport) ? termImport : termID
       }&WeekId=${(typeof (Number(weekImport)) === 'number' && Number(weekImport) >= 0) ? weekImport : week
       }`
-    await getScheduleFromURLAndWriteFile(url, requestOptions);
+    await getScheduleFromURLAndWriteFile(url, requestOptionsGet);
 
   } else {
     let url = await `http://online.dlu.edu.vn/Home/DrawingClassStudentSchedules_Mau2?YearStudy=${yearImportRegex.test(yearImport) ? yearImport : yearStudy
       }&TermID=${termImportRegex.test(termImport) ? termImport : termID
       }&Week=${(typeof (Number(weekImport)) === 'number' && Number(weekImport) >= 0) ? weekImport : week
       }&ClassStudentID=${idImport}`;
-    await getScheduleFromURLAndWriteFile(url, requestOptions);
+    await getScheduleFromURLAndWriteFile(url, requestOptionsGet);
   }
 
   await handleDataScheduleToJSON();
