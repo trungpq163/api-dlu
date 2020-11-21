@@ -1,0 +1,19 @@
+{
+  "name": "api-dlu",
+  "version": "1.1.5",
+  "description": "schedule api dalat university",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "quoctrung163",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "node-fetch": "^2.6.1",
+    "tabletojson": "^2.0.4"
+  }
+}
