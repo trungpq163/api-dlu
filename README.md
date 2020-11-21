@@ -88,7 +88,7 @@ app.listen(port, () => {
 ## Documentation
 ### performSyncScheduleFunctions
 
-this function handle api 
+Main function, it handle api :D
 
 - `performSyncScheduleFunctions(idImport, yearImport, termImport, weekImport)`
 
@@ -119,7 +119,7 @@ app.get('/', async (req, res) => {
 ```
 
 ### handleDataScheduleToJSON
-this function get json data
+Handle data schedule from index.html and convert to json :D
 for example:
 ```ts
 const { handleDataScheduleToJSON } = require('api-dlu');
@@ -131,7 +131,7 @@ async function dosomething() {
 ```
 
 ### urlHTMLFile
-get url html file in api-dlu module for rendering :D
+Get url html file in api-dlu module for rendering :D
 for example:
 ```ts
 const { urlHTMLFile } = require('api-dlu');
@@ -139,4 +139,12 @@ const { urlHTMLFile } = require('api-dlu');
 app.get('/', async (req, res) => {
   res.sendFile(__dirname + urlHTMLFile)
 })
+```
+
+### consoleLogAPI
+Function show api in console
+for example
+```ts
+const { consoleLogAPI } from ('api-dlu);
+consoleLogAPI("1710289");
 ```
