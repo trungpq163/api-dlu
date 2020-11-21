@@ -14,6 +14,9 @@ var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 myHeaders.append("Cookie", "ASP.NET_SessionId=x4xip2xdezqlj5t2ujdmtqix");
 
+var myHeadersGet = new Headers();
+myHeadersGet.append("Cookie", "ASP.NET_SessionId=x4xip2xdezqlj5t2ujdmtqix");
+
 var urlencoded = new URLSearchParams();
 urlencoded.append("txtTaiKhoan", process.env.ID);
 urlencoded.append("txtMatKhau", process.env.PassWord);
@@ -27,7 +30,7 @@ var requestOptions = {
 
 var requestOptionsGet = {
   method: 'GET',
-  headers: myHeaders,
+  headers: myHeadersGet,
   redirect: 'follow'
 };
 
