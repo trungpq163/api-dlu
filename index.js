@@ -30,6 +30,10 @@ const requestOptions = {
 let yearStudy = "";
 let termID = "";
 let week = "";
+/**
+ * @param string
+ * @description: get url html file in api-dlu module for rendering :D
+ */
 const urlHTMLFile = '/node_modules/api-dlu/index.html';
 
 const yearImportRegex = new RegExp('^[0-9]{4}-[0-9]{4}$');
@@ -87,6 +91,9 @@ async function getScheduleFromURLAndWriteFile(url, config) {
     .catch(error => console.log(error));
 }
 
+/**
+ * this function get json data
+ */
 async function handleDataScheduleToJSON() {
   const fileIndexHTML = await fs.readFileSync(
     path.resolve(__dirname, "index.html"),
@@ -101,6 +108,16 @@ async function handleDataScheduleToJSON() {
   return result;
 }
 
+/**
+ * 
+ * @param {number} idImport 
+ * @param {number} yearImport 
+ * @param {string} termImport 
+ * @param {number} weekImport 
+ * @description this function handle api
+ * @requires idImport
+ * @default yearImport, termImport, weekImport current value
+ */
 async function performSyncScheduleFunctions(idImport, yearImport, termImport, weekImport) {
 
   let urlLogin = await `http://online.dlu.edu.vn/Login`;
