@@ -1,7 +1,7 @@
 
 ## API Schedule of Dalat University
 
-`api-dlu` is a library contain function help you essy create api :D. If you get some bug, you can create issue in repo github https://github.com/quoctrung163/api-dlu. Thank you <3
+`api-dlu` is a library contain function help you easy create api :D. If you get some bug, you can create issue in repo github https://github.com/quoctrung163/api-dlu. Thank you <3
 
 ## Installation
 With npm (node package manager)
@@ -14,12 +14,31 @@ With yarn
 yarn add api-dlu
 ```
 
+## Note
+You can export environment Account for post login api
+
+1. export environment
+```cmd
+cd pj
+export STUDENT_ID=studentID
+export PASSWORD=yourpassword
+```
+
+2. or you can create .env in node_modules/api-dlu
+
+In file .env
+```cmd
+STUDENT_ID=studentID
+PASSWORD=yourpassword
+```
+
 ## Import Example
 ```ts
 const {
   handleDataScheduleToJSON,
   performSyncScheduleFunctions,
-  urlHTMLFile
+  urlHTMLFile,
+  consoleLogAPI
 } from 'api-dlu';
 ```
 
@@ -81,7 +100,7 @@ app.get("/", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server running at http://${port}/`);
+  console.log(`Server running at http://localhost:${port}/`);
 });
 ```
 
