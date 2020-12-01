@@ -1,7 +1,7 @@
 
 ## API Schedule of Dalat University
 
-`api-dlu` is a library contain function help you easy create api :D. If you get some bug, you can create issue in repo github https://github.com/quoctrung163/api-dlu. Thank you <3
+`api-dlu` is a library contains functions help you create easy api :D. If you get some bug, you can create issue in repo github https://github.com/quoctrung163/api-dlu. Thank you <3
 
 ## Installation
 With npm (node package manager)
@@ -15,16 +15,16 @@ yarn add api-dlu
 ```
 
 ## Note
-You can export environment Account for post login api
+You must export environment Account for post login api
 
-1. export environment
+1. Export environment
 ```cmd
 cd pj
 export STUDENT_ID=studentID
 export PASSWORD=yourpassword
 ```
 
-2. or you can create .env in node_modules/api-dlu
+2. Or you can create .env in node_modules/api-dlu
 
 In file .env
 ```cmd
@@ -111,9 +111,9 @@ Main function, it handle api :D
 
 - `performSyncScheduleFunctions(idImport, yearImport, termImport, weekImport)`
 
-- you obligate pass value into `idImport` parameter if not you will get nothing :(
+- You must pass value into `idImport` if not you will get nothing :(
 
-- yearImport, termImport, weekImport: default if you not pass value into parameter of `performSyncScheduleFunctions` then it will get current value of (year, term, week).
+- yearImport, termImport, weekImport: default if you not pass value then it will get current value of (year, term, week).
 
 for example:
 ```ts
