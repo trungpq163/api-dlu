@@ -1,5 +1,5 @@
 
-## API Schedule of Dalat University
+## Schedule API (DaLat University)
 
 `api-dlu` is a library contains functions help you create easy api :D. If you get some bug, you can create issue in repo github https://github.com/quoctrung163/api-dlu. Thank you <3
 
