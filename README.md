@@ -1,7 +1,7 @@
 
 ## Schedule API (DaLat University)
 
-`api-dlu` is a library contains functions help you create easy api :D. If you get some bug, you can create issue in repo github https://github.com/quoctrung163/api-dlu. Thank you <3
+`api-dlu` is a library contains functions help you create easy api :D. If you get some bug, you can create issue in repo github https://github.com/trungphan163/api-dlu. Thank you <3
 
 ## Installation
 With npm (node package manager)
@@ -39,7 +39,7 @@ const {
   performSyncScheduleFunctions,
   urlHTMLFile,
   consoleLogAPI
-} from 'api-dlu';
+} = require('api-dlu');
 ```
 
 ## Quick Start
@@ -164,6 +164,6 @@ app.get('/', async (req, res) => {
 Function show api in console
 for example
 ```ts
-const { consoleLogAPI } from ('api-dlu);
+const { consoleLogAPI } = require('api-dlu);
 consoleLogAPI("1710289");
 ```
