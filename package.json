@@ -1,6 +1,6 @@
 {
     "name": "api-dlu",
-    "version": "1.3.2",
+    "version": "1.3.3",
     "description": "schedule api dalat university",
     "main": "index.js",
     "scripts": {
