@@ -49,11 +49,10 @@ const getYearAndTermStudy = () => {
     (month === 3) |
     (month === 4) |
     (month === 5) |
-    (month === 6)
   ) {
     yearStudy = `${year - 1}-${year}`;
     termID = `HK02`;
-  } else if (month === 7) {
+  } else if (month === 6) {
     yearStudy = `${year - 1}-${year}`;
     termID = `HK03`;
   } else {
