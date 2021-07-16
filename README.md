@@ -1,6 +1,6 @@
 ## Schedule API (DaLat University)
 
-`api-dlu` is a library contains functions help you create easy api :D. If you get some bug, you can create issue in repo github https://github.com/trungphan163/api-dlu. Thank you <3
+`api-dlu` is a library contains functions that helps you create easy API :D. If you get some bug, you can create an issue in repo GitHub https://github.com/trungpq163/api-dlu. Thank you <3
 
 You can click the link here to know `api-dlu` look like: https://respected-intermediate-croissant.glitch.me/?studentID=1710289&yearStudy=2020-2021&termID=HK02&week=16
 
@@ -24,7 +24,7 @@ yarn add api-dlu
 
 ## Note
 
-You must export environment Account for post login api
+You must export environment Account for post-login API
 
 1. Export environment
 
@@ -34,7 +34,7 @@ export STUDENT_ID=studentID
 export PASSWORD=yourpassword
 ```
 
-2. Or you can create .env in node_modules/api-dlu
+2. Or you can create .env in your project
 
 In file .env
 
@@ -58,7 +58,6 @@ const {
 
 ```js
 const express = require("express");
-const bodyparser = require("body-parser");
 const {
     handleDataScheduleToJSON,
     performSyncScheduleFunctions,
@@ -69,7 +68,7 @@ require("dotenv").config();
 const port = 8000;
 const app = express();
 
-app.use(bodyparser.json());
+app.use(express.json());
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -126,7 +125,7 @@ app.get("/", async (req, res) => {
             detailExample: {
                 studentID: "yourStudentID | example: 1710289, (default: empty)",
                 yearStudy: "example: 2019-2020, (default: current year)",
-                termID: "example: HK01 | HK02, (default: current termID)",
+                termID: "example: HK01 | HK02 | HK03, (default: current termID)",
                 week: "example: 18, (default: current week)",
             },
         };
@@ -143,15 +142,15 @@ app.listen(port, () => {
 
 ### performSyncScheduleFunctions
 
-Main function, it handle api :D
+The main function, it handles API :D
 
 -   `performSyncScheduleFunctions(idImport, yearImport, termImport, weekImport)`
 
--   You must pass value into `idImport` if not you will get nothing :(
+-   You must pass a value into `idImport` if not you will get nothing :(
 
--   yearImport, termImport, weekImport: default if you not pass value then it will get current value of (year, term, week).
+-   yearImport, termImport, weekImport: default if you don't pass value then it will get the current value of (year, term, week)
 
-for example:
+For example:
 
 ```ts
 const {
@@ -177,7 +176,8 @@ app.get('/', async (req, res) => {
 ### handleDataScheduleToJSON
 
 Handle data schedule from index.html and convert to json :D
-for example:
+
+For example:
 
 ```ts
 const { handleDataScheduleToJSON } = require("api-dlu");
@@ -191,7 +191,8 @@ async function dosomething() {
 ### urlHTMLFile
 
 Get url html file in api-dlu module for rendering :D
-for example:
+
+For example:
 
 ```ts
 const { urlHTMLFile } = require("api-dlu");
@@ -203,8 +204,9 @@ app.get("/", async (req, res) => {
 
 ### consoleLogAPI
 
-Function show api in console
-for example
+Function display API in CLI (Terminal, CMD, ...)
+
+For example:
 
 ```ts
 const { consoleLogAPI } = require('api-dlu);
