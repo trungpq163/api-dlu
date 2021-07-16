@@ -6,7 +6,7 @@ You can click the link here to know `api-dlu` look like: https://respected-inter
 
 ## Demo (Chatbot using API)
 
-![Alt Text](https://github.com/trungpq163/api-dlu/blob/main/giphy.gif)
+![Alt Text](https://github.com/trungpq163/animp3/blob/master/giphy.gif)
 
 ## Installation
 
